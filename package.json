@@ -43,12 +43,13 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "clean": "rimraf lib",
     "build": "tsc -p ./tsconfig.build.json && yarn fix-paths",
+    "clean": "rimraf lib",
     "fix-paths": "tscpaths -p tsconfig.build.json -s ./src -o ./lib",
     "git:commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "git:pre-commit": "lint-staged",
     "lint": "eslint ./src --ext .ts",
+    "prepare": "yarn build",
     "test": "jest",
     "watch": "yarn clean && tsc-watch -w -p ./tsconfig.build.json --onSuccess \"yarn fix-paths\""
   },
