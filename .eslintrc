@@ -1,0 +1,3 @@
+{
+  "extends": ["@tagoro9/eslint-config-typescript"]
+}
