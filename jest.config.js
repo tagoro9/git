@@ -1,8 +1,8 @@
 module.exports = {
-    coverageDirectory: 'reports/coverage',
-    coverageReporters: ['lcov', 'html'],
-    moduleNameMapper: {
-        '~/(.*)': '<rootDir>/src/$1',
-    },
-    preset: 'ts-jest'
+  coverageDirectory: "./coverage/",
+  coverageReporters: ["html", "lcov"],
+  moduleNameMapper: {
+    "~/(.*)": "<rootDir>/src/$1",
+  },
+  preset: "ts-jest",
 };
