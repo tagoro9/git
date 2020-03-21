@@ -1,3 +1,6 @@
 {
-  "extends": ["@tagoro9/eslint-config-typescript"]
+  "extends": ["@tagoro9/eslint-config-typescript"],
+  "env": {
+    "node": true
+  }
 }
