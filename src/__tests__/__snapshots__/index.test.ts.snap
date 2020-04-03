@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`git getRemote should fall back to the first remote if it cannot find the specified one 1`] = `
+Object {
+  "commit": undefined,
+  "filepath": "",
+  "filepathtype": "",
+  "full_name": "tagoro9/git",
+  "git_suffix": true,
+  "hash": "",
+  "href": "git@github.com:tagoro9/git.git",
+  "name": "git",
+  "organization": "tagoro9",
+  "owner": "tagoro9",
+  "pathname": "/tagoro9/git.git",
+  "port": null,
+  "protocol": "ssh",
+  "protocols": Array [],
+  "query": Object {},
+  "ref": "",
+  "resource": "github.com",
+  "search": "",
+  "source": "github.com",
+  "toString": [Function],
+  "token": "",
+  "user": "git",
+}
+`;
+
+exports[`git getRemote should return the parsed remote 1`] = `
+Object {
+  "commit": undefined,
+  "filepath": "",
+  "filepathtype": "",
+  "full_name": "tagoro9/git",
+  "git_suffix": true,
+  "hash": "",
+  "href": "git@github.com:tagoro9/git.git",
+  "name": "git",
+  "organization": "tagoro9",
+  "owner": "tagoro9",
+  "pathname": "/tagoro9/git.git",
+  "port": null,
+  "protocol": "ssh",
+  "protocols": Array [],
+  "query": Object {},
+  "ref": "",
+  "resource": "github.com",
+  "search": "",
+  "source": "github.com",
+  "toString": [Function],
+  "token": "",
+  "user": "git",
+}
+`;
+
+exports[`git getRemote should throw an error if there are no remotes 1`] = `"Could not find a remote with name \\"origin\\""`;

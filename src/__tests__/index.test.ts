@@ -7,9 +7,19 @@ const simpleGitMock = (simplegit as unknown) as jest.Mock;
 jest.mock("simple-git/promise");
 
 const branchName = "f/my-fancy-branch";
+const remote = "git@github.com:tagoro9/git.git";
 
 const gitMocks = {
   revparse: jest.fn().mockResolvedValue(branchName),
+  getRemotes: jest.fn().mockResolvedValue([
+    {
+      name: "origin",
+      refs: {
+        fetch: remote,
+        push: remote,
+      },
+    },
+  ]),
 };
 
 describe("git", () => {
@@ -47,6 +57,25 @@ describe("git", () => {
         "code",
         GitErrorType.NOT_A_GIT_REPO
       );
+    });
+  });
+
+  describe("getRemote", () => {
+    it("should return the parsed remote", async () => {
+      await expect(git.getRemote("origin")).resolves.toMatchSnapshot();
+      expect(gitMocks.getRemotes).toHaveBeenCalledWith(true);
+    });
+
+    it("should fall back to the first remote if it cannot find the specified one", async () => {
+      await expect(git.getRemote("some_remote")).resolves.toMatchSnapshot();
+      expect(gitMocks.getRemotes).toHaveBeenCalledWith(true);
+    });
+
+    it("should throw an error if there are no remotes", async () => {
+      gitMocks.getRemotes.mockResolvedValue([]);
+      await expect(
+        git.getRemote("origin")
+      ).rejects.toThrowErrorMatchingSnapshot();
     });
   });
 });
