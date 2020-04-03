@@ -1,8 +1,9 @@
+import gitUrlParse = require("git-url-parse");
 import simpleGit = require("simple-git/promise");
 import { SimpleGit } from "simple-git/promise";
 
 import { GitError } from "~/GitError";
-import { GitErrorType } from "~/types";
+import { GitErrorType, GitRemote } from "~/types";
 
 /**
  * Get a git instance
@@ -30,5 +31,27 @@ export const git = {
   getCurrentBranchName(): Promise<string> {
     const git = getGit();
     return git.revparse(["--abbrev-ref", "HEAD"]).catch(mapAndThrowError);
+  },
+
+  /**
+   * Get the remote information. Fallback to the first found remote if none
+   * with the specified name can be found
+   * @param name Remote name
+   */
+  getRemote(name: string): Promise<gitUrlParse.GitUrl> {
+    const git = getGit();
+    return git.getRemotes(true).then((remotes: GitRemote[]) => {
+      const origin = remotes.find((remote: GitRemote) => remote.name === name);
+      const firstRemote = remotes[0];
+
+      if (!origin && !firstRemote) {
+        throw new GitError(
+          `Could not find a remote with name "${name}"`,
+          GitErrorType.REMOTE_NOT_FOUND
+        );
+      }
+
+      return gitUrlParse((origin || firstRemote).refs.fetch);
+    });
   },
 };
