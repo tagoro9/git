@@ -758,10 +758,10 @@
   dependencies:
     type-detect "4.0.8"
 
-"@tagoro9/eslint-config-typescript@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@tagoro9/eslint-config-typescript/-/eslint-config-typescript-1.0.0.tgz#e5c091c99ad9fce1fad0585f229a9c6f7d53cadd"
-  integrity sha512-QVikv6cRLy7J9frkdm0efjNDQQIMf/Skb31BJK2+4FRh61hMVT+3/enn3wTYSff2Z8bHY9dZqssR5/HuUOZbKA==
+"@tagoro9/eslint-config-typescript@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@tagoro9/eslint-config-typescript/-/eslint-config-typescript-1.1.0.tgz#e71421a207e699c954fa54283c30cee9e4046efc"
+  integrity sha512-M1tdt7K7i4Cc/PTX6kDRF3Pa2eXvhnP4+GRAxulqSzhS9K5Y/5GGAcvj9vp3S/Jvs2VXIoo7J09bWbE+WLtG4A==
 
 "@tootallnate/once@1":
   version "1.0.0"
