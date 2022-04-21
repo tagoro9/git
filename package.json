@@ -16,7 +16,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@tagoro9/eslint-config-typescript": "^1.1.0",
+    "@tagoro9/eslint-config-typescript": "^1.2.0",
     "@types/conventional-commits-parser": "^3.0.0",
     "@types/git-url-parse": "^9.0.0",
     "@types/jest": "^25.1.4",
