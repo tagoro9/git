@@ -77,6 +77,6 @@
   "dependencies": {
     "conventional-commits-parser": "^3.0.8",
     "git-url-parse": "^11.1.2",
-    "simple-git": "^1.132.0"
+    "simple-git": "^3.5.0"
   }
 }

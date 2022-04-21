@@ -1,10 +1,10 @@
-import simplegit = require("simple-git/promise");
+import simplegit = require("simple-git");
 import { git } from "~/index";
 import { GitErrorType } from "~/types";
 
 const simpleGitMock = (simplegit as unknown) as jest.Mock;
 
-jest.mock("simple-git/promise");
+jest.mock("simple-git");
 
 const branchName = "f/my-fancy-branch";
 const remote = "git@github.com:tagoro9/git.git";
