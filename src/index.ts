@@ -1,6 +1,5 @@
 import gitUrlParse = require("git-url-parse");
-import simpleGit = require("simple-git/promise");
-import { SimpleGit } from "simple-git/promise";
+import simpleGit, { SimpleGit } from "simple-git";
 
 import { GitError } from "~/GitError";
 import { GitErrorType, GitRemote } from "~/types";
